@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+</head>
+<body style="font-family: Arial; text-align: center; padding-top: 100px;">
+
+<h1>🎉 You opened a new page!</h1>
+<p id="message">Connecting to Java backend...</p>
+
+<button onclick="window.location.href='/'">
+    Go Back Home
+</button>
+
+<script>
+    fetch('/api/message')
+        .then(response => response.text())
+        .then(message => {
+            document.getElementById('message').textContent = message;
+        })
+        .catch(error => {
+            document.getElementById('message').textContent =
+                'Could not connect to the backend.';
+        });
+</script>
+
+</body>
+</html>

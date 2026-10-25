@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            margin: 0;
+            padding: 40px 15px;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: auto;
+            padding: 28px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px #0001;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2563eb;
+        }
+
+        label {
+            display: block;
+            margin-top: 16px;
+        }
+
+        input, select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 24px;
+            padding: 13px;
+            background: #2563eb;
+            color: white;
+            border: 0;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .view-button {
+            display: block;
+            text-align: center;
+            margin-top: 14px;
+            padding: 12px;
+            background: #0f766e;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .view-button:hover {
+            background: #115e59;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Student Registration</h2>
+
+    <form action="/students" method="post">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" required maxlength="100">
+
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email"
+               required maxlength="150">
+
+        <label for="phone">Phone Number</label>
+        <input id="phone" name="phone" type="tel"
+               pattern="[0-9]{10}" required>
+
+        <label for="department">Department</label>
+        <select id="department" name="department" required>
+            <option value="">Choose department</option>
+            <option value="ECE">ECE</option>
+            <option value="CSE">CSE</option>
+            <option value="EEE">EEE</option>
+            <option value="MECH">Mechanical</option>
+            <option value="CIVIL">Civil</option>
+        </select>
+
+        <button type="submit">Register Student</button>
+
+        <a href="/students" class="view-button">
+            View All Students
+        </a>
+
+    </form>
+</div>
+</body>
+</html>
